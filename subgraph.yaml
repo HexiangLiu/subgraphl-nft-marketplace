@@ -6,7 +6,7 @@ dataSources:
     name: NftMarketplace
     network: sepolia
     source:
-      address: "0x45C42f71330AE9b877B0fBa1010D90D3bc9E8D33"
+      address: '0x45C42f71330AE9b877B0fBa1010D90D3bc9E8D33'
       abi: NftMarketplace
       startBlock: 4750121
     mapping:
@@ -27,4 +27,4 @@ dataSources:
           handler: handleItemCanceled
         - event: ItemListed(indexed address,indexed address,indexed uint256,uint256)
           handler: handleItemListed
-      file: ./src/nft-marketplace.ts
+      file: ./src/mapping.ts
