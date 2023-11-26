@@ -7,7 +7,7 @@ type ActiveItem @entity {
   price: BigInt!
 }
 
-type ItemBought @entity(immutable: true) {
+type ItemBought @entity {
   id: ID!
   buyer: Bytes! # address
   nftAddress: Bytes! # address
@@ -18,7 +18,7 @@ type ItemBought @entity(immutable: true) {
   transactionHash: Bytes!
 }
 
-type ItemCanceled @entity(immutable: true) {
+type ItemCanceled @entity {
   id: ID!
   seller: Bytes! # address
   nftAddress: Bytes! # address
@@ -28,7 +28,7 @@ type ItemCanceled @entity(immutable: true) {
   transactionHash: Bytes!
 }
 
-type ItemListed @entity(immutable: true) {
+type ItemListed @entity {
   id: ID!
   seller: Bytes! # address
   nftAddress: Bytes! # address

@@ -22,7 +22,6 @@ export function handleItemBought(event: ItemBoughtEvent): void {
     ItemBoughtEntity = new ItemBought(id);
   }
   ItemBoughtEntity.buyer = event.params.buyer;
-  ActiveItemEntity!.buyer = event.params.buyer;
   ItemBoughtEntity.nftAddress = event.params.nftAddress;
   ItemBoughtEntity.tokenId = event.params.tokenId;
   ItemBoughtEntity.price = event.params.price;
@@ -30,6 +29,11 @@ export function handleItemBought(event: ItemBoughtEvent): void {
   ItemBoughtEntity.blockNumber = event.block.number;
   ItemBoughtEntity.blockTimestamp = event.block.timestamp;
   ItemBoughtEntity.transactionHash = event.transaction.hash;
+
+  ActiveItemEntity!.buyer = Address.fromString(
+    '0x000000000000000000000000000000000000dEaD'
+  );
+  ActiveItemEntity!.seller = event.params.buyer;
 
   ItemBoughtEntity.save();
   ActiveItemEntity!.save();
